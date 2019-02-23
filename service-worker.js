@@ -55,5 +55,8 @@ self.addEventListener('fetch', function (e) {
            .then(function (response) {
                 return response || fetch(e.request); // responde com o cache ou busca no servidor.
             })
+           .catch(function (err) {
+               console.log('erro', err);
+           })
    );
 });
